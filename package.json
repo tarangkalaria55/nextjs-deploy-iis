@@ -7,20 +7,28 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "prepublish:iisnode": "npm run build",
+    "prepublish:http": "npm run build",
+    "publish:iisnode": "npm exec ts-node ./publish-iis-iisnode.ts",
+    "publish:http": "npm exec ts-node ./publish-iis-http-platform.ts"
   },
   "dependencies": {
+    "@next/env": "^15.5.5",
+    "next": "15.5.5",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.5"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@biomejs/biome": "2.2.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
+    "fs-extra": "^11.3.2",
     "tailwindcss": "^4",
-    "@biomejs/biome": "2.2.0"
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
   }
 }
