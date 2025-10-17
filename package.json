@@ -10,8 +10,8 @@
     "format": "biome format --write",
     "prepublish:iisnode": "npm run build",
     "prepublish:http": "npm run build",
-    "publish:iisnode": "npm exec ts-node ./publish-iis-iisnode.ts",
-    "publish:http": "npm exec ts-node ./publish-iis-http-platform.ts"
+    "publish:iisnode": "npm exec ts-node ./publish-iis.ts -- --platform iisnode",
+    "publish:http": "npm exec ts-node ./publish-iis.ts -- --platform http-platform"
   },
   "dependencies": {
     "@next/env": "^15.5.5",
